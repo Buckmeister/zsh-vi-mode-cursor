@@ -16,7 +16,7 @@ zle -A zle-keymap-select _vmc_zle-keymap-select
 function _vmc_zle-line-finish {
   echo -ne '\e[5 q'
 }
-zle -N zle-line-finish _vmc_zle-line-finish
+zle -A zle-line-finish _vmc_zle-line-finish
 
 _fix_cursor() {
    echo -ne '\e[5 q'
