@@ -26,7 +26,11 @@ function _vmc_zle-line-finish {
 }
 zle -N zle-line-finish _vmc_zle-line-finish
 
-_fix_cursor() {
+zle -A zle-line-init _vmc_saved_zle-line-init
+function _vmc_zle-line-init {
    echo -ne '\e[5 q'
+  if (( ${+widgets[_vmc_saved_zle-line-init]} )); then
+    zle _vmc_saved_zle-line-init
+  fi
 }
-precmd_functions+=(_fix_cursor)
+zle -N zle-line-init _vmc_zle-line-init
