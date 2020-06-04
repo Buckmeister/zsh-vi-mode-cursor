@@ -1,5 +1,5 @@
 # Change cursor according to vim-mode
-function zle-keymap-select {
+function _vmc_zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]]; then
      echo -ne '\e[1 q'
   elif [[ ${KEYMAP} == main ]] ||
@@ -11,12 +11,12 @@ function zle-keymap-select {
   zle reset-prompt
 }
 
-zle -N zle-keymap-select
+zle -N zle-keymap-select _vmc_zle-keymap-select
 
-function zle-line-finish {
+function _vmc_zle-line-finish {
   echo -ne '\e[5 q'
 }
-zle -N zle-line-finish
+zle -N zle-line-finish _vmc_zle-line-finish
 
 _fix_cursor() {
    echo -ne '\e[5 q'
