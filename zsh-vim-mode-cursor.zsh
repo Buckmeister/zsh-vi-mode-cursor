@@ -11,14 +11,14 @@ function _vmc_zle-keymap-select {
   fi
 
   zle reset-prompt
-  _vmc_saved_zle-keymap-select
+  zle _vmc_saved_zle-keymap-select
 }
 zle -N zle-keymap-select _vmc_zle-keymap-select
 
 zle -A zle-line-finish _vmc_saved_zle-line-finish
 function _vmc_zle-line-finish {
   echo -ne '\e[5 q'
-  _vmc_saved_zle-line-finish
+  zle _vmc_saved_zle-line-finish
 }
 zle -N zle-line-finish _vmc_zle-line-finish
 
