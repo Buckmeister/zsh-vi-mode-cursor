@@ -11,7 +11,7 @@ function _vmc_zle-keymap-select {
   zle reset-prompt
 }
 
-zle -N zle-keymap-select _vmc_zle-keymap-select
+zle -A zle-keymap-select _vmc_zle-keymap-select
 
 function _vmc_zle-line-finish {
   echo -ne '\e[5 q'
