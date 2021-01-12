@@ -1,2 +1,2 @@
 # zsh-vi-mode-cursor
-Change cursor according to vim-mode in zsh
+Change cursor according to vi-mode in zsh
